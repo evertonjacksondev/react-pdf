@@ -1,25 +1,10 @@
-import logo from './logo.svg';
-import './App.css';
+import DocViewer, { DocViewerRenderers } from "@cyntler/react-doc-viewer";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+export function App() {
+  const docs = [
+    { uri: require("./2023-18-06_Docker_INV-913CE8.pdf") }, // Local File
+  ];
+
+  return <DocViewer documents={docs} pluginRenderers={DocViewerRenderers} />;
 }
-
-export default App;
